@@ -1,0 +1,114 @@
+git command
+____________________________
+
+git branch 
+
+显示本地分支
+
+git branch -r
+
+显示远程分支
+
+git branch -vv
+
+显示本地分支的远程跟踪信息
+
+git remote -v 
+
+显示所有已配置的远程仓库及其对应的 fetch 和 push URL
+
+git status
+
+与git branch -vv 相似，可以查看本地分支和远程分支的关系。
+
+git status --branch 
+
+显示当前所在的本地分支，以及它与关联的远程分支之间的差异
+
+git show 
+
+__________________________________
+
+git add .
+
+目录及其所有子目录下的所有更改（包括修改、新增和删除的文件）添加到暂存区
+
+git add file1.txt
+
+添加指定的文件到暂存区
+
+git ls-files --stage 
+
+列出了暂存区中所有文件的信息
+
+git diff --staged
+
+git diff master origin/master
+
+比较本地的 master 分支与远程的 master 分支
+
+git commit -m "Add feature X or fix bug Y"
+
+更改记录到本地仓库中
+
+git push
+
+将本地分支推到远程的关联分支
+
+git push origin your-branch
+
+推送指定的本地分支到同名的远程分支
+
+git push origin feature:develop
+
+推送本地的 feature 分支到远程的 develop 分支
+
+如果 develop 分支不存在，它也会被创建
+
+
+--------------------------------------------
+
+git fetch 
+
+git fetch origin <branch-name>
+
+只更新来自远程仓库 origin 的指定 <branch-name> 分支的信息，本地对应的远程跟踪分支会被更新
+
+git merge 
+
+
+
+
+git pull origin remote-branch-name
+
+拉取远程分支的更改 【首先先git checkout branch-loacl 】
+
+
+
+——————————————————————
+
+git checkout branch-name  /  git switch branch-name
+
+切换本地分支
+
+git checkout -b new-branch-name
+
+创建一个名为 new-branch-name 的新分支，并自动切换到这个新分支
+
+git checkout -b feature-login origin/feature-login
+
+创建并切换到一个新的本地分支，并将其设置为跟踪指定的远程分支(改远程分支必须存在)
+
+git push -u origin new-branch
+
+将新创建的本地分支，推送到远程分支（创建新的远程分支） 
+
+-u表示new-branch 分支设置为远程 origin 仓库下同名的 new-branch 分支的跟踪分支
+
+git branch --set-upstream-to=origin/new-branch-name-remote new-branch-name-local
+
+设置或修改本地分支与远程分支之间的跟踪关系, 以后使用 git pull 或 git push 时，不需要指定远程仓库和分支名
+
+------------------------------------------------------------------
+
+
