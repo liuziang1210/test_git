@@ -97,7 +97,7 @@ git checkout -b new-branch-name
 
 git checkout -b feature-login origin/feature-login
 
-创建并切换到一个新的本地分支，并将其设置为跟踪指定的远程分支(改远程分支必须存在)
+创建并切换到一个新的本地分支，并将其设置为跟踪指定的远程分支(this 远程分支必须存在)
 
 git push -u origin new-branch
 
