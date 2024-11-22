@@ -1,0 +1,32 @@
+--------------------------
+11.22
+-------------------------
+os.environ.get()
+用于批量获取, 读取多个环境变量的值,因为可以使用字典的方式进行访问和遍历
+env_variables = {
+    'EMAIL_HOST': 'localhost',
+    'EMAIL_PORT': '25',
+    'EMAIL_USER': 'user@example.com'
+}
+
+for var, default in env_variables.items():
+  value = os.environ.get(var, default)
+
+os.environ['HOME'] = "/to/your/home" 用于设置环境变量的值
+
+os.getenv()
+email_host = os.getenv('EMAIL_HOST', 'localhost')
+获取名为 'EMAIL_HOST' 的环境变量的值，如果不存在，则返回默认值 'localhost'
+--------------------------------------
+" + "可以用于列表和元组的合并
+--------------------------------------
+os.path.enpandvars($HOME)
+这个函数扫描路径字符串，并将其中的环境变量替换为它们的实际值
+------------------------------------------------
+
+
+
+
+
+
+
