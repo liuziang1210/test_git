@@ -19,14 +19,54 @@ email_host = os.getenv('EMAIL_HOST', 'localhost')
 获取名为 'EMAIL_HOST' 的环境变量的值，如果不存在，则返回默认值 'localhost'
 --------------------------------------
 " + "可以用于列表和元组的合并
+
+" + "可以用于添加其他字符
+original_str = "World"
+new_str = "Hello, " + original_str
+print(new_str)  # 输出: "Hello, World"
 --------------------------------------
 os.path.enpandvars($HOME)
 这个函数扫描路径字符串，并将其中的环境变量替换为它们的实际值
 ------------------------------------------------
+移除字符串开头和结尾的空白字符或者指定字符
 
+example_string = "   Hello, World!   "
+print(example_string.strip())
+输出为: "Hello, World!"
 
+example_string_2 = "###Hello, World!###"
+print(example_string.strip('#'))
+输出为: "Hello, World!"
+---------------------------------------------------
+array = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
 
+sum_along_axis0 = np.sum(array, axis=0)--> [12, 15, 18]
+------------------------------------------------------------
+np.all()
+检查数组中的所有元素是否都为 True
+a = np.all([[True, False], [False, False]]) --> False
+没有指定axis参数，np.all会检查数组中的所有元素 
 
+a = np.all([[True, False], [True, False], [True, True], axis=0)
+--> [True, False]
+a = np.all([[True, False], [True, False], [True, True], axis=1)
+--> [False, False, True]
+
+当将多个布尔数组放入一个列表并直接传递给 np.all 时，NumPy 会将这个列表解释为一个二维数组
+
+np.any()
+检查数组中的元素是否为 True
+a = np.all([[True, False], [True, False], [True, True], axis=1, keepdims=True)
+keepdims=True 时，结果数组保持原始数组的维度
+------------------------------------------------------------
+np.where()
+np.where(condition, x, y) 
+x: 当 condition 为 True 时，选取的元素数组。
+y: 当 condition 为 False 时，选取的元素数组。
 
 
 
