@@ -109,7 +109,39 @@ list1, list2, list3 = zip(*zipped)
 --------------------------------------------------------------
 Pandas
 
-df = pd.Dataframe()
+df = pd.Dataframe(date=None, index=None, columns=None)
+index设置行标签, 没有指定index, 则默认会生成从 0 开始的整数索引。
+columns设置列标签, 如果没有指定，则默认会生成从 0 开始的整数列标签，或者根据 data 的键（对于字典）或列数自动生成列名
+
+data = {
+    'A': [1, 2, 3],
+    'B': [4, 5, 6],
+    'C': [7, 8, 9]
+}
+
+# 创建 DataFrame，并重新指定列标签
+columns = ['C', 'A', 'B']
+df = pd.DataFrame(data, columns=columns)
+
+-->
+   C  A  B
+0  7  1  4
+1  8  2  5
+2  9  3  6
+
+
+df.iloc[:, :1] 返回的是一个 DataFrame，包含所有行和第 0 列。
+df.iloc[:, 0] 返回的是一个 Series，包含第 0 列的所有元素。
+
+-----------------------------
+df_merged = pd.merge(df_left, df_right, on='StudentID', how='outer', validate='one_to_one')
+
+on="Signal": 指定了合并的键（或列名）
+
+how='outer' 表示进行外连接，保留两个数据框中的所有行。如果某个数据框中没有匹配的行，则用 NaN 填充。
+
+validate='one_to_one' 表示验证合并是否为一对一关系。
+-------------------------------------
 
 
 
